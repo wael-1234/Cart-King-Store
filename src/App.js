@@ -8,6 +8,7 @@ import Cart from './component/Cart/Cart';
 import Contact from './component/Contact/Contact';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register'
+import Footer from './component/Footer/Footer';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route exact path='/Login' component={Login} />
       <Route exact path='/Register' component={Register} />
       </Switch>
+      <Footer />
     </>
   );
 }

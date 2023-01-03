@@ -23,8 +23,6 @@ export default function Profile() {
     }
     )
 
-    let secondPassword='secondPassword'
-
   const alert = async () => {
     const { value: file } = await Swal.fire({
       title: 'Select image',
@@ -45,16 +43,19 @@ export default function Profile() {
   }
 
 const  confirmProfilealert = () =>{
-  
-  if((user.name.length>2))
-
+  if((user.name))
       Swal.fire({ title:`You are welcome ${user.name} ${user.familyName}`})
-      
+  }
 
+  const verifPassword = (pw) =>{
+    if(pw==user.password){
+      alert('Pass word is confirmed')
+    }else{
+      alert('Please Retap your password')
+    }
   }
 
   return (
-   
     <div className="container" >
       <div className="row">
         <div className="col-md-3 border-right">
@@ -180,7 +181,7 @@ const  confirmProfilealert = () =>{
               <input
                 type="password"
                 className="form-control"
-                onChange={e=>secondPassword=e.target.value}
+                onChange={e=>verifPassword(e)}
               />
             </div>
           </div>
